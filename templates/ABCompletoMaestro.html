@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %} 
+ 
+{% block content%}
+  {%from "_macros.html" import render_field%}
+
+  <div class="container">
+
+    <a href="/" class="btn btn-success">
+        <i class="icon-undo icon-white"></i> Nuevo
+    </a>
+    
+
+   <div class="row">
+       
+       <h2>Alumnos IDGS801</h2>
+       <table  clas="table table-striped table-bordered">
+        <thead>
+            <tr class="tr-head">
+                <th>Nombre Maestro</th>
+                <th>Apellidos  Maestro</th>
+                <th>Correo  Maestro</th>
+                <th>Especialidad </th>
+                <th>Turno</th>
+                <th>Eliminar</th>
+                <th>Modificar</th>
+               
+                
+            </tr>
+        </thead>
+        <tbody>
+            {%for mae in maestros%}
+            <tr>
+                <td>{{mae.nombreM}}</td>
+                <td>{{mae.apellidosM}}</td>
+                <td>{{mae.emailM}}</td>
+                <td>{{mae.especialidad}}</td>
+                <td>{{mae.turno}}</td>
+                <td><a href="eliminar?id={{mae.id}}" 
+                    class="btn btn-danger"><i class="icon-remove icon-white"></i>Eliminar</a></td>
+                <td><a href="modificar?id={{mae.id}}" 
+                    class="btn btn-warning"><i class="icon-pencil icon-white"></i>Modificar</a></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+       </table>
+   </div>
+  </div>
+
+{% endblock %}
