@@ -6,7 +6,7 @@
 
   <div class="container">
 
-    <a href="/" class="btn btn-success">
+    <a href="/insertarMaestro" class="btn btn-success">
         <i class="icon-undo icon-white"></i> Nuevo
     </a>
     
@@ -29,17 +29,18 @@
             </tr>
         </thead>
         <tbody>
-            {%for mae in maestros%}
+            {% for res in resultset %}
             <tr>
-                <td>{{mae.nombreM}}</td>
-                <td>{{mae.apellidosM}}</td>
-                <td>{{mae.emailM}}</td>
-                <td>{{mae.especialidad}}</td>
-                <td>{{mae.turno}}</td>
-                <td><a href="eliminar?id={{mae.id}}" 
-                    class="btn btn-danger"><i class="icon-remove icon-white"></i>Eliminar</a></td>
-                <td><a href="modificar?id={{mae.id}}" 
-                    class="btn btn-warning"><i class="icon-pencil icon-white"></i>Modificar</a></td>
+                <td>{{ res[1] }}</td>
+                <td>{{ res[2] }}</td>
+                <td>{{ res[3] }}</td>
+                <td>{{ res[4] }}</td>
+                <td> {{res[5] }}</td>
+                <td><a href="eliminarMaestro?id={{res[0]}}" class="btn btn-danger">
+                        <i class="icon-remove icon_white"></i>Eliminar</a> </td>
+                <td><a href="modificarMaestro?id={{res[0]}}" class="btn btn-warning">
+                        <i class="icon-pencil icon_white"></i>Modificar</a> </td>
+
             </tr>
             {%endfor%}
         </tbody>
