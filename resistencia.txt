@@ -1,0 +1,9 @@
+marron,negro,negro,oro
+marron,marron,negro,oro
+marron,marron,negro,oro
+rojo,rojo,naranja,plata
+rojo,rojo,naranja,plata
+rojo,rojo,naranja,plata
+rojo,rojo,naranja,plata
+rojo,rojo,naranja,plata
+naranja,marron,marron,plata
